@@ -7,24 +7,24 @@ import java.util.List;
 public class Calculator {
 
 	/* OPERATIONS */
-	public static double add(double i, double j) {
+	public static double add(double leftOperand, double rightOperand) {
 		CalculatorCommand addCommand = new Add();
-		return addCommand.execute(i, j);
+		return addCommand.execute(leftOperand, rightOperand);
 	}
 
-	public static double subtract(double i, double j) {
+	public static double subtract(double leftOperand, double rightOperand) {
 		CalculatorCommand subtractCommand = new Subtract();
-		return subtractCommand.execute(i, j);
+		return subtractCommand.execute(leftOperand, rightOperand);
 	}
 
-	public static double multiply(double i, double j) {
+	public static double multiply(double ileftOperand, double rightOperand) {
 		CalculatorCommand multiplyCommand = new Multiply();
-		return multiplyCommand.execute(i, j);
+		return multiplyCommand.execute(ileftOperand, rightOperand);
 	}
 
-	public static double divide(double i, double j) {
+	public static double divide(double leftOperand, double rightOperand) {
 		CalculatorCommand divideCommand = new Divide();
-		return divideCommand.execute(i, j);
+		return divideCommand.execute(leftOperand, rightOperand);
 	}
 
 	/*  */
@@ -32,7 +32,7 @@ public class Calculator {
 		boolean isOperand = true;
 
 		try {
-			double number = Double.parseDouble(operand);
+			Double.parseDouble(operand);
 		} catch (NumberFormatException e) {
 			isOperand = false;
 		}
@@ -43,21 +43,21 @@ public class Calculator {
 	public static boolean isOperator(String n1) {
 		boolean isOperator = false;
 
-		if (n1 == "+" || n1 == "-") {
+		if (n1 == "+" || n1 == "-" || n1 == "*" || n1 == "/") {
 			isOperator = true;
 		}
 
 		return isOperator;
 	}
 
-	public static boolean isInputOrderValid(String[] s) {
+	public static boolean isInputOrderValid(String[] args) {
 		boolean isValid = true;
 
-		for (int i = 0; i < s.length; i++) {
+		for (int i = 0; i < args.length; i++) {
 			if (i % 2 == 0) {
-				isValid = isOperand(s[i]);
+				isValid = isOperand(args[i]);
 			} else {
-				isValid = isOperator(s[i]);
+				isValid = isOperator(args[i]);
 			}
 		}
 
@@ -66,11 +66,11 @@ public class Calculator {
 
 	public static double execution(String[] args) {
 
-		List<String> tmp = new ArrayList<String>(Arrays.asList(args));
+		List<String> temporaryArguments = new ArrayList<String>(Arrays.asList(args));
 
-		tmp = executeRecursive(tmp);
+		temporaryArguments = executeRecursive(temporaryArguments);
 
-		return Double.parseDouble(tmp.get(0));
+		return Double.parseDouble(temporaryArguments.get(0));
 	}
 
 	public static List<String> executeRecursive(List<String> args) {
@@ -78,16 +78,16 @@ public class Calculator {
 
 		// elso elem kiszedese
 		String operator = args.get(1);
-		Double firstNumber = Double.parseDouble(args.get(0));
-		Double secondNumber = Double.parseDouble(args.get(2));
+		double leftOperand = Double.parseDouble(args.get(0));
+		double rightOperand = Double.parseDouble(args.get(2));
 
 		// muvelet a masodik elemmel
 		if (operator == "+") {
 			Add addCommand = new Add();
-			result = addCommand.execute(firstNumber, secondNumber);
+			result = addCommand.execute(leftOperand, rightOperand);
 		} else if (operator == "-") {
 			Subtract subtractCommand = new Subtract();
-			result = subtractCommand.execute(firstNumber, secondNumber);
+			result = subtractCommand.execute(leftOperand, rightOperand);
 		} else {
 			throw new IllegalArgumentException("nem tamogatott muveletsor");
 		}

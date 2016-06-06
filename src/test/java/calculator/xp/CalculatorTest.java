@@ -9,7 +9,7 @@ import xp.calculator.Calculator;
 public class CalculatorTest {
 	
 	/* D A T A  P R O V I D E R S */
-	@DataProvider(name = "input_add")
+	@DataProvider(name = "inputsForAdd")
 	Object[][] addInput() {
 		return new Object[][] { 
 				{ 2, 3, 5 }, 
@@ -19,7 +19,7 @@ public class CalculatorTest {
 		};
 	}
 
-	@DataProvider(name = "input_subtract")
+	@DataProvider(name = "inputsForSubtract")
 	Object[][] subtractInput() {
 		return new Object[][] { 
 				{ 2, 3, -1.0 }, 
@@ -43,7 +43,7 @@ public class CalculatorTest {
 		};
 	}
 
-	@DataProvider(name = "input_multiple")
+	@DataProvider(name = "inputsForMultipleOperation")
 	Object[][] multipleInput() {
 		return new Object[][] { 
 				{ 10.0, "3", "+", "10", "+", "2", "-", "5" },
@@ -61,7 +61,7 @@ public class CalculatorTest {
 		Assert.assertEquals(result, 9.0);
 	}
 
-	@Test(dataProvider = "input_add", enabled = false)
+	@Test(dataProvider = "inputsForAdd", enabled = false)
 	public void testAddBulk(double a, double b, double expected_result) {
 		double result = Calculator.add(a, b);
 
@@ -84,7 +84,7 @@ public class CalculatorTest {
 		Assert.assertEquals(result, 20.0);
 	}
 
-	@Test(dataProvider = "input_subtract", enabled = false)
+	@Test(dataProvider = "inputsForSubtract", enabled = false)
 	public void testSubtractBulk(double a, double b, double expected_result) {
 		double result = Calculator.subtract(a, b);
 
@@ -99,60 +99,60 @@ public class CalculatorTest {
 	public void testIsNotOperand(String o) {
 		Assert.assertEquals(Calculator.isOperand(o), false);
 	}
-	@Test(dataProvider="operands")
-	public void testIsOperator(String o) {
-		Assert.assertEquals(Calculator.isOperand(o), true);
-	}
 	@Test(dataProvider="operators")
+	public void testIsOperator(String o) {
+		Assert.assertEquals(Calculator.isOperator(o), true);
+	}
+	@Test(dataProvider="operands")
 	public void testIsNotOperator(String o) {
-		Assert.assertEquals(Calculator.isOperand(o), false);
+		Assert.assertEquals(Calculator.isOperator(o), false);
 	}
 
 	@Test
 	public void testValidateInputOrder() {
-		String[] s = { "1", "+", "2", "-", "9" };
+		String[] testInput = { "1", "+", "2", "-", "9" };
 
-		boolean isValid = Calculator.isInputOrderValid(s);
+		boolean isValid = Calculator.isInputOrderValid(testInput);
 
 		Assert.assertEquals(isValid, true);
 	}
 
 	@Test
 	public void testExecutionAdd() {
-		String[] args = { "1", "+", "2" };
+		String[] testInput = { "1", "+", "2" };
 
-		Double result = Calculator.execution(args);
+		Double result = Calculator.execution(testInput);
 
 		Assert.assertEquals(result, 3.0);
 	}
 
 	@Test
 	public void testExecutionSubtract() {
-		String[] args = { "2", "-", "1" };
+		String[] testInput = { "2", "-", "1" };
 
-		Double result = Calculator.execution(args);
+		Double result = Calculator.execution(testInput);
 
 		Assert.assertEquals(result, 1.0);
 	}
 
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testExecutionIllegalArgument() {
-		String[] args = { "2", "&", "1" };
+		String[] testInput = { "2", "&", "1" };
 
-		Double result = Calculator.execution(args);
+		Double result = Calculator.execution(testInput);
 
 	}
 
 	@Test
 	public void testExecutionAddMultipleNumbers() {
-		String[] args = { "1", "+", "2", "+", "3" };
+		String[] testInput = { "1", "+", "2", "+", "3" };
 
-		Double result = Calculator.execution(args);
+		Double result = Calculator.execution(testInput);
 
 		Assert.assertEquals(result, 6.0);
 	}
 
-	@Test(dataProvider = "input_multiple")
+	@Test(dataProvider = "inputsForMultipleOperation")
 	public void testExecutionAddMultipleNumbersWithDataProvider(
 			Double expectedResult, String... parts) {
 

@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="30" passed="30">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="101" started-at="2016-06-06T13:01:48Z" finished-at="2016-06-06T13:01:48Z">
+  <suite name="Default suite" duration-ms="96" started-at="2016-06-06T14:25:40Z" finished-at="2016-06-06T14:25:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="101" started-at="2016-06-06T13:01:48Z" finished-at="2016-06-06T13:01:48Z">
+    <test name="Default test" duration-ms="96" started-at="2016-06-06T14:25:40Z" finished-at="2016-06-06T14:25:40Z">
       <class name="calculator.xp.CalculatorTest">
-        <test-method status="PASS" signature="testAdd()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testAdd" duration-ms="15" started-at="2016-06-06T15:01:48Z" finished-at="2016-06-06T15:01:48Z">
+        <test-method status="PASS" signature="testAdd()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testAdd" duration-ms="11" started-at="2016-06-06T16:25:40Z" finished-at="2016-06-06T16:25:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAdd -->
-        <test-method status="PASS" signature="testExecutionAdd()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionAdd" duration-ms="0" started-at="2016-06-06T15:01:48Z" finished-at="2016-06-06T15:01:48Z">
+        <test-method status="PASS" signature="testExecutionAdd()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionAdd" duration-ms="2" started-at="2016-06-06T16:25:40Z" finished-at="2016-06-06T16:25:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExecutionAdd -->
-        <test-method status="PASS" signature="testExecutionAddMultipleNumbers()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionAddMultipleNumbers" duration-ms="0" started-at="2016-06-06T15:01:48Z" finished-at="2016-06-06T15:01:48Z">
+        <test-method status="PASS" signature="testExecutionAddMultipleNumbers()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionAddMultipleNumbers" duration-ms="1" started-at="2016-06-06T16:25:40Z" finished-at="2016-06-06T16:25:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExecutionAddMultipleNumbers -->
-        <test-method status="PASS" signature="testExecutionAddMultipleNumbersWithDataProvider(java.lang.Double, [Ljava.lang.String;)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionAddMultipleNumbersWithDataProvider" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="input_multiple" finished-at="2016-06-06T15:01:48Z">
+        <test-method status="PASS" signature="testExecutionAddMultipleNumbersWithDataProvider(java.lang.Double, [Ljava.lang.String;)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionAddMultipleNumbersWithDataProvider" duration-ms="1" started-at="2016-06-06T16:25:40Z" data-provider="inputsForMultipleOperation" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
@@ -35,15 +35,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExecutionAddMultipleNumbersWithDataProvider -->
-        <test-method status="PASS" signature="testExecutionIllegalArgument()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionIllegalArgument" duration-ms="0" started-at="2016-06-06T15:01:48Z" finished-at="2016-06-06T15:01:48Z">
+        <test-method status="PASS" signature="testExecutionAddMultipleNumbersWithDataProvider(java.lang.Double, [Ljava.lang.String;)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionAddMultipleNumbersWithDataProvider" duration-ms="1" started-at="2016-06-06T16:25:40Z" data-provider="inputsForMultipleOperation" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@617faa95]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testExecutionAddMultipleNumbersWithDataProvider -->
+        <test-method status="PASS" signature="testExecutionIllegalArgument()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionIllegalArgument" duration-ms="2" started-at="2016-06-06T16:25:40Z" finished-at="2016-06-06T16:25:40Z">
           <exception class="java.lang.IllegalArgumentException">
             <message>
               <![CDATA[nem tamogatott muveletsor]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.IllegalArgumentException: nem tamogatott muveletsor
-	at xp.calculator.Calculator.executeRecursive(Calculator.java:93)
-	at xp.calculator.Calculator.execution(Calculator.java:72)
+	at xp.calculator.Calculator.executeRecursive(Calculator.java:92)
+	at xp.calculator.Calculator.execution(Calculator.java:71)
 	at calculator.xp.CalculatorTest.testExecutionIllegalArgument(CalculatorTest.java:142)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -76,82 +92,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExecutionIllegalArgument -->
-        <test-method status="PASS" signature="testExecutionAddMultipleNumbersWithDataProvider(java.lang.Double, [Ljava.lang.String;)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionAddMultipleNumbersWithDataProvider" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="input_multiple" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0.0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@617faa95]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testExecutionAddMultipleNumbersWithDataProvider -->
-        <test-method status="PASS" signature="testIsNotOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperand" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operators" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[+]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsNotOperand -->
-        <test-method status="PASS" signature="testIsNotOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperand" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operators" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsNotOperand -->
-        <test-method status="PASS" signature="testIsNotOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperand" duration-ms="15" started-at="2016-06-06T15:01:48Z" data-provider="operators" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[/]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsNotOperand -->
-        <test-method status="PASS" signature="testIsNotOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperand" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operators" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[*]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsNotOperand -->
-        <test-method status="PASS" signature="testExecutionSubtract()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionSubtract" duration-ms="0" started-at="2016-06-06T15:01:48Z" finished-at="2016-06-06T15:01:48Z">
+        <test-method status="PASS" signature="testExecutionSubtract()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testExecutionSubtract" duration-ms="0" started-at="2016-06-06T16:25:40Z" finished-at="2016-06-06T16:25:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExecutionSubtract -->
-        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operators" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsNotOperator -->
-        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operators" finished-at="2016-06-06T15:01:48Z">
+        <test-method status="PASS" signature="testIsNotOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperand" duration-ms="1" started-at="2016-06-06T16:25:40Z" data-provider="operators" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
@@ -161,19 +106,19 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testIsNotOperator -->
-        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
+        </test-method> <!-- testIsNotOperand -->
+        <test-method status="PASS" signature="testIsNotOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperand" duration-ms="3" started-at="2016-06-06T16:25:40Z" data-provider="operators" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[3.14]]>
+                <![CDATA[-]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testIsOperand -->
-        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operators" finished-at="2016-06-06T15:01:48Z">
+        </test-method> <!-- testIsNotOperand -->
+        <test-method status="PASS" signature="testIsNotOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperand" duration-ms="2" started-at="2016-06-06T16:25:40Z" data-provider="operators" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
@@ -183,8 +128,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testIsNotOperator -->
-        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operators" finished-at="2016-06-06T15:01:48Z">
+        </test-method> <!-- testIsNotOperand -->
+        <test-method status="PASS" signature="testIsNotOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperand" duration-ms="1" started-at="2016-06-06T16:25:40Z" data-provider="operators" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
@@ -194,19 +139,19 @@
           </params>
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- testIsNotOperand -->
+        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="1" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- testIsNotOperator -->
-        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsOperand -->
-        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
+        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
@@ -216,19 +161,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testIsOperand -->
-        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsOperand -->
-        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
+        </test-method> <!-- testIsNotOperator -->
+        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
@@ -238,52 +172,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testIsOperand -->
-        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsOperand -->
-        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="16" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsOperator -->
-        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsOperator -->
-        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="1" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-1.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsOperator -->
-        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="1" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
+        </test-method> <!-- testIsNotOperator -->
+        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="1" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
@@ -293,8 +183,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testIsOperator -->
-        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="1" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
+        </test-method> <!-- testIsNotOperator -->
+        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
@@ -304,16 +194,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testIsOperator -->
-        <test-method status="PASS" signature="testMultiply()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testMultiply" duration-ms="0" started-at="2016-06-06T15:01:48Z" finished-at="2016-06-06T15:01:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testMultiply -->
-        <test-method status="PASS" signature="testSubtract()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testSubtract" duration-ms="0" started-at="2016-06-06T15:01:48Z" finished-at="2016-06-06T15:01:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSubtract -->
-        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="0" started-at="2016-06-06T15:01:48Z" data-provider="operands" finished-at="2016-06-06T15:01:48Z">
+        </test-method> <!-- testIsNotOperator -->
+        <test-method status="PASS" signature="testIsNotOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsNotOperator" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
           <params>
             <param index="0">
               <value>
@@ -323,8 +205,126 @@
           </params>
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- testIsNotOperator -->
+        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="1" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOperand -->
+        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOperand -->
+        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="1" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-1.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOperand -->
+        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3.14]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOperand -->
+        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="4" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOperand -->
+        <test-method status="PASS" signature="testIsOperand(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperand" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operands" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOperand -->
+        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operators" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- testIsOperator -->
-        <test-method status="PASS" signature="testValidateInputOrder()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testValidateInputOrder" duration-ms="0" started-at="2016-06-06T15:01:48Z" finished-at="2016-06-06T15:01:48Z">
+        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operators" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOperator -->
+        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="1" started-at="2016-06-06T16:25:40Z" data-provider="operators" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[*]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOperator -->
+        <test-method status="PASS" signature="testIsOperator(java.lang.String)[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testIsOperator" duration-ms="0" started-at="2016-06-06T16:25:40Z" data-provider="operators" finished-at="2016-06-06T16:25:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOperator -->
+        <test-method status="PASS" signature="testMultiply()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testMultiply" duration-ms="2" started-at="2016-06-06T16:25:40Z" finished-at="2016-06-06T16:25:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMultiply -->
+        <test-method status="PASS" signature="testSubtract()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testSubtract" duration-ms="1" started-at="2016-06-06T16:25:40Z" finished-at="2016-06-06T16:25:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSubtract -->
+        <test-method status="PASS" signature="testValidateInputOrder()[pri:0, instance:calculator.xp.CalculatorTest@6276ae34]" name="testValidateInputOrder" duration-ms="1" started-at="2016-06-06T16:25:40Z" finished-at="2016-06-06T16:25:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidateInputOrder -->
