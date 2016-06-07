@@ -1,10 +1,10 @@
 package xp.calculator;
 
-public class Substract implements CalculatorCommand {
+public class Subtract implements CalculatorCommand {
 	double leftOperand;
 	double rightOperand;
 	
-	public Substract (double leftOperand, double rightOperand) {
+	public Subtract (double leftOperand, double rightOperand) {
 		this.leftOperand = leftOperand;
 		this.rightOperand = rightOperand;
 	}
