@@ -6,26 +6,26 @@ import java.util.List;
 
 public class Calculator {
 
-	/* OPERATIONS */
-	public static double add(double leftOperand, double rightOperand) {
-		CalculatorCommand addCommand = new Add();
-		return addCommand.execute(leftOperand, rightOperand);
-	}
-
-	public static double subtract(double leftOperand, double rightOperand) {
-		CalculatorCommand subtractCommand = new Subtract();
-		return subtractCommand.execute(leftOperand, rightOperand);
-	}
-
-	public static double multiply(double ileftOperand, double rightOperand) {
-		CalculatorCommand multiplyCommand = new Multiply();
-		return multiplyCommand.execute(ileftOperand, rightOperand);
-	}
-
-	public static double divide(double leftOperand, double rightOperand) {
-		CalculatorCommand divideCommand = new Divide();
-		return divideCommand.execute(leftOperand, rightOperand);
-	}
+//	/* OPERATIONS */
+//	public static double add(double leftOperand, double rightOperand) {
+//		CalculatorCommand addCommand = new Add();
+//		return addCommand.execute(leftOperand, rightOperand);
+//	}
+//
+//	public static double subtract(double leftOperand, double rightOperand) {
+//		CalculatorCommand subtractCommand = new Subtract();
+//		return subtractCommand.execute(leftOperand, rightOperand);
+//	}
+//
+//	public static double multiply(double ileftOperand, double rightOperand) {
+//		CalculatorCommand multiplyCommand = new Multiply();
+//		return multiplyCommand.execute(ileftOperand, rightOperand);
+//	}
+//
+//	public static double divide(double leftOperand, double rightOperand) {
+//		CalculatorCommand divideCommand = new Divide();
+//		return divideCommand.execute(leftOperand, rightOperand);
+//	}
 
 	/*  */
 	public static boolean isOperand(String operand) {
@@ -66,7 +66,8 @@ public class Calculator {
 
 	public static double execution(String[] args) {
 
-		List<String> temporaryArguments = new ArrayList<String>(Arrays.asList(args));
+		List<String> temporaryArguments = new ArrayList<String>(
+				Arrays.asList(args));
 
 		temporaryArguments = executeRecursive(temporaryArguments);
 
@@ -76,32 +77,44 @@ public class Calculator {
 	public static List<String> executeRecursive(List<String> args) {
 		Double result = 0.0;
 
-		// elso elem kiszedese
-		String operator = args.get(1);
-		double leftOperand = Double.parseDouble(args.get(0));
-		double rightOperand = Double.parseDouble(args.get(2));
+		CalculatorCommand command = getCommand(args);
 
-		// muvelet a masodik elemmel
-		if (operator == "+") {
-			Add addCommand = new Add();
-			result = addCommand.execute(leftOperand, rightOperand);
-		} else if (operator == "-") {
-			Subtract subtractCommand = new Subtract();
-			result = subtractCommand.execute(leftOperand, rightOperand);
-		} else {
-			throw new IllegalArgumentException("nem tamogatott muveletsor");
-		}
+		result = command.execute();
+
+		args = updateList(args, result);
 
 		// rekurziv hivas
-		args.set(0, result.toString());
-		args.remove(1);
-		args.remove(1);
-
 		if (args.size() > 2) {
 			args = executeRecursive(args);
 		}
 		return args;
 
+	}
+
+	private static List<String> updateList(List<String> args, Double result) {
+		args.set(0, result.toString());
+		args.remove(1);
+		args.remove(1);
+
+		return args;
+	}
+
+	public static CalculatorCommand getCommand(List<String> args)
+			throws IllegalArgumentException {
+		String operator = args.get(1);
+		double leftOperand = Double.parseDouble(args.get(0));
+		double rightOperand = Double.parseDouble(args.get(2));
+
+		CalculatorCommand command;
+		if (operator == "+") {
+			command = new Add(leftOperand, rightOperand);
+		} else if (operator == "-") {
+			command = new Substract(leftOperand, rightOperand);
+		} else {
+			throw new IllegalArgumentException("nem tamogatott muveletsor");
+		}
+
+		return command;
 	}
 
 }

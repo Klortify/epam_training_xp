@@ -4,7 +4,11 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import xp.calculator.Calculator;
+import xp.calculator.Add;
+import xp.calculator.CalculatorCommand;
+import xp.calculator.Multiply;
+import xp.calculator.Substract;
+
 
 public class CalculatorTest {
 	
@@ -55,9 +59,10 @@ public class CalculatorTest {
 	
 	@Test
 	public void testAdd() {
+		CalculatorCommand addCommand = new Add(5.0, 4.0);
 
-		double result = Calculator.add(5.0, 4.0);
-
+		double result = addCommand.execute();
+		
 		Assert.assertEquals(result, 9.0);
 	}
 
@@ -70,17 +75,15 @@ public class CalculatorTest {
 
 	@Test
 	public void testSubtract() {
-
-		double result = Calculator.subtract(5.0, 4.0);
-
+		CalculatorCommand substractCommand = new Substract(5.0, 4.0);
+		double result = substractCommand.execute();
 		Assert.assertEquals(result, 1.0);
 	}
 
 	@Test
 	public void testMultiply() {
-
-		double result = Calculator.multiply(5.0, 4.0);
-
+		CalculatorCommand multiplyCommand = new Multiply(5.0, 4.0);
+		double result = multiplyCommand.execute();
 		Assert.assertEquals(result, 20.0);
 	}
 
