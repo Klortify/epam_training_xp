@@ -6,28 +6,30 @@ import java.util.List;
 
 public class Calculator {
 
-//	/* OPERATIONS */
-//	public static double add(double leftOperand, double rightOperand) {
-//		CalculatorCommand addCommand = new Add();
-//		return addCommand.execute(leftOperand, rightOperand);
-//	}
-//
-//	public static double subtract(double leftOperand, double rightOperand) {
-//		CalculatorCommand subtractCommand = new Subtract();
-//		return subtractCommand.execute(leftOperand, rightOperand);
-//	}
-//
-//	public static double multiply(double ileftOperand, double rightOperand) {
-//		CalculatorCommand multiplyCommand = new Multiply();
-//		return multiplyCommand.execute(ileftOperand, rightOperand);
-//	}
-//
-//	public static double divide(double leftOperand, double rightOperand) {
-//		CalculatorCommand divideCommand = new Divide();
-//		return divideCommand.execute(leftOperand, rightOperand);
-//	}
+	/*
+	 * TODO this should work... later command pattern version, not yet developed
+	 */
+	// /* OPERATIONS */
+	// public static double add(double leftOperand, double rightOperand) {
+	// CalculatorCommand addCommand = new Add();
+	// return addCommand.execute(leftOperand, rightOperand);
+	// }
+	//
+	// public static double subtract(double leftOperand, double rightOperand) {
+	// CalculatorCommand subtractCommand = new Subtract();
+	// return subtractCommand.execute(leftOperand, rightOperand);
+	// }
+	//
+	// public static double multiply(double ileftOperand, double rightOperand) {
+	// CalculatorCommand multiplyCommand = new Multiply();
+	// return multiplyCommand.execute(ileftOperand, rightOperand);
+	// }
+	//
+	// public static double divide(double leftOperand, double rightOperand) {
+	// CalculatorCommand divideCommand = new Divide();
+	// return divideCommand.execute(leftOperand, rightOperand);
+	// }
 
-	/*  */
 	public static boolean isOperand(String operand) {
 		boolean isOperand = true;
 
@@ -40,10 +42,10 @@ public class Calculator {
 		return isOperand;
 	}
 
-	public static boolean isOperator(String n1) {
+	public static boolean isOperator(String operator) {
 		boolean isOperator = false;
 
-		if (n1 == "+" || n1 == "-" || n1 == "*" || n1 == "/") {
+		if (operator == "+" || operator == "-" || operator == "*" || operator == "/") {
 			isOperator = true;
 		}
 
@@ -77,29 +79,40 @@ public class Calculator {
 	public static List<String> executeRecursive(List<String> args) {
 		Double result = 0.0;
 
-		CalculatorCommand command = getCommand(args);
+		CalculatorCommand command = getNextCommand(args);
 
 		result = command.execute();
 
-		args = updateList(args, result);
+		args = exchangeOperationWithResult(args, result);
 
-		// rekurziv hivas
-		if (args.size() > 2) {
+		if (hasMoreCommand(args)) {
 			args = executeRecursive(args);
 		}
 		return args;
 
 	}
 
-	private static List<String> updateList(List<String> args, Double result) {
-		args.set(0, result.toString());
-		args.remove(1);
-		args.remove(1);
+	private static boolean hasMoreCommand(List<String> args) {
+		return args.size() > 2;
+	}
+
+	private static List<String> exchangeOperationWithResult(List<String> args, Double result) {
+		putResultToLeftOperand(args, result);
+		removeAlreadyCalculatedItems(args);
 
 		return args;
 	}
 
-	public static CalculatorCommand getCommand(List<String> args)
+	private static void removeAlreadyCalculatedItems(List<String> args) {
+		args.remove(1);
+		args.remove(1);
+	}
+
+	private static void putResultToLeftOperand(List<String> args, Double result) {
+		args.set(0, result.toString());
+	}
+
+	public static CalculatorCommand getNextCommand(List<String> args)
 			throws IllegalArgumentException {
 		String operator = args.get(1);
 		double leftOperand = Double.parseDouble(args.get(0));
@@ -111,7 +124,7 @@ public class Calculator {
 		} else if (operator == "-") {
 			command = new Substract(leftOperand, rightOperand);
 		} else {
-			throw new IllegalArgumentException("nem tamogatott muveletsor");
+			throw new IllegalArgumentException("not supported operation");
 		}
 
 		return command;

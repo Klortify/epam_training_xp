@@ -5,6 +5,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import xp.calculator.Add;
+import xp.calculator.Calculator;
 import xp.calculator.CalculatorCommand;
 import xp.calculator.Multiply;
 import xp.calculator.Substract;
@@ -66,12 +67,11 @@ public class CalculatorTest {
 		Assert.assertEquals(result, 9.0);
 	}
 
-	@Test(dataProvider = "inputsForAdd", enabled = false)
-	public void testAddBulk(double a, double b, double expected_result) {
-		double result = Calculator.add(a, b);
-
-		Assert.assertEquals(result, expected_result, "Add failed.");
-	}
+//	@Test(dataProvider = "inputsForAdd", enabled = false)
+//	public void testAddBulk(double a, double b, double expected_result) {
+//		double result = Calculator.add(a, b);
+//		Assert.assertEquals(result, expected_result, "Add failed.");
+//	}
 
 	@Test
 	public void testSubtract() {
@@ -87,12 +87,12 @@ public class CalculatorTest {
 		Assert.assertEquals(result, 20.0);
 	}
 
-	@Test(dataProvider = "inputsForSubtract", enabled = false)
-	public void testSubtractBulk(double a, double b, double expected_result) {
-		double result = Calculator.subtract(a, b);
-
-		Assert.assertEquals(result, expected_result, "Subtract failed.");
-	}
+//	@Test(dataProvider = "inputsForSubtract", enabled = false)
+//	public void testSubtractBulk(double a, double b, double expected_result) {
+//		double result = Calculator.subtract(a, b);
+//
+//		Assert.assertEquals(result, expected_result, "Subtract failed.");
+//	}
 
 	@Test(dataProvider="operands")
 	public void testIsOperand(String o) {
